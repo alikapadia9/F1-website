@@ -1,79 +1,57 @@
-# F One on One — Website
+# F One on One — Website (v3)
 
-A single-page, no-build-step website (plain HTML/CSS/JS). Open `index.html`
-directly in a browser to preview, or deploy it as-is to any static host.
+Plain HTML/CSS/JS, no build step. Open `index.html` in a browser to preview,
+or drag the folder into Vercel/Netlify to deploy.
 
-The name is a naming curiosity only — there is no racing/F1 visual theme.
-The site is designed for adults who already know how to drive and need to
-convert overseas experience into a local licence, or who need a fixed
-number of instructor hours logged efficiently. Tone: competent, direct,
-respectful of the reader's time.
-
-## What's inside
-```
-index.html    → all page content and section structure
-styles.css    → the whole design system (colours, type, layout, animation)
-script.js     → text-generate hero reveal, scroll reveals, the Readiness
-                Panel bar animation, the fast-track loop tracing beam,
-                comparison table row reveal, FAQ accordion, pricing card
-                rendering, WhatsApp links
-config.js     → the ONLY file you should need to edit for numbers/pricing
-```
+## What changed from earlier drafts
+- **Colour:** bright sky blue + white + warm amber (not dark, not racing red,
+  not the dark-green version). This matches Fatema's actual 2024 blue
+  hatchback.
+- **Audience:** copy now speaks to adults who already know how to drive
+  (overseas licence conversions) *and* anyone who needs logged hours with a
+  licensed instructor — not nervous beginner teens.
+- **Signature animation:** a "road journey" — a small blue car travels down
+  a dashed road strip on the left edge of the screen as you scroll (desktop
+  only, hidden on mobile to stay uncluttered). It's original to this brief
+  rather than borrowed from any reference site, and ties directly to
+  Fatema's real car.
+- **Automatic only** — every mention of manual transmission has been removed.
+- **No pricing** — replaced with a plain-English explanation of effort-based
+  quoting instead of a fixed hourly rate.
+- **Real WhatsApp number** wired into `config.js` (+61 430 856 620).
+- **Kept and strengthened**, per your notes: "you learn at your own pace,"
+  the dual-control/extra-brake explanation, "lessons that fit where you're
+  starting from," the learner's package, a rewritten pre-test section (no
+  claim about knowing the exact test route — reframed as a confidence
+  tune-up), the learner's-to-full-licence guide, the full 1:3 logbook
+  explainer with the speedometer-style dial, and the areas-serviced map for
+  Newcastle / Central Coast / Sydney — now with a "share your postcode"
+  coverage checker.
+- **FAQ:** removed the confusing Safer Drivers Course question; replaced
+  with questions that actually matter for this audience (overseas drivers,
+  pick-up, languages spoken, lesson count).
+- **Three "Let's Get Started"-style CTAs** (worded differently each time,
+  same destination: the enquiry form).
 
 ## Before you launch — edit these
-1. **`config.js`**
-   - `whatsappNumber` — replace with the real number in international
-     format (e.g. an Australian mobile `04XX XXX XXX` becomes
-     `"61XXXXXXXXX"`, no leading zero, no spaces, no `+`).
-   - `packages` — the three pricing tiers (casual lesson / structured
-     package / fast-track intensive). Pricing cards on the page are
-     rendered from this array by `script.js` — nothing in `index.html`
-     needs to change once real numbers are filled in.
-2. **`index.html`** — search for `[PLACEHOLDER]` and replace:
-   - Instructor name, bio, photo, licence number
-   - Manual/automatic offering
-   - FAQ answers (first-lesson checklist, hour-crediting rules,
-     overseas-licence conversion, cancellation policy, language support)
-   - The instructor photo: swap the `.photo-frame__placeholder` div for
-     an `<img>` tag pointing at a real photo.
-3. **Enquiry form** (`#enquiryForm` in `index.html` / bottom of `script.js`)
-   — currently just shows an alert on submit. Wire it up to:
-   - A form backend like Formspree/Getform, or
-   - A serverless function that emails you, or
-   - Your booking/CRM tool of choice.
+1. **`config.js`** — the coverage-checker postcode ranges are a rough
+   placeholder; tighten them up or remove the checker if you'd rather not
+   promise anything automatically.
+2. **`index.html`** — search for `[PLACEHOLDER]`:
+   - Fatema's avatar/photo (two spots: hero + "Meet your instructor")
+   - A photo of the actual blue 2024 hatchback (hero)
+   - NSW instructor licence number
+   - A few FAQ answers (lesson count estimate, pick-up/drop-off policy,
+     rescheduling policy)
+3. **Enquiry form** — currently shows an alert on submit. Wire it up to a
+   form backend (Formspree, a serverless function) or your booking/CRM tool.
 
-## Design notes
-- **Signature element:** the Readiness Panel (`#readiness`) — a sticky
-  panel of animated metrics ("Hazard Perception," "Road Rules," "Test
-  Confidence," "Logbook Hours Logged") that stays pinned while related
-  content scrolls past it, with each bar/number animating in
-  (overshoot-and-settle easing) as its matching step scrolls into view.
-  The numbers shown are an illustrative example, not a real, personalised
-  claim — the copy says so explicitly.
-- Palette: warm graphite base (`#14161A`/`#1B1E24`) with a single
-  green-teal accent (`#34D6A6`) that reads as "cleared," not "danger."
-  No racing red.
-- Type: Inter only, for both display and body — no condensed/sporty
-  display face.
-- Hero entrance uses a word-by-word "text generate" reveal plus a slow
-  drifting spotlight and a faint grid — no motion-line/racing-stripe sweep.
-- The 3-step process (Assess → Correct → Certify) draws itself in as a
-  tracing beam as each step scrolls into view.
-- The comparison table (self-practice / family-supervised / licensed
-  instructor) reveals row by row, with the instructor column subtly
-  highlighted.
-- Animations respect `prefers-reduced-motion` — anyone with that setting
-  enabled sees the finished state immediately, no motion.
-- Fonts load from Google Fonts (Inter) via the `<link>` tags in
-  `index.html`. No API keys or build tools needed.
+## Adding Fatema's avatar and the car photo
+When you have the avatar image, drop it in an `assets/` folder and replace
+the `.avatar-frame__placeholder` and `.car-frame__placeholder` `<span>`
+elements in `index.html` with `<img>` tags pointing at the file. No other
+changes needed — the frames are already sized and styled to take an image.
 
 ## Deploying
-This is a static site — drag the whole folder into Vercel, Netlify, or any
-static host, or push it to a GitHub repo and connect it to Vercel/Netlify
-for automatic deploys. No `npm install` or build step required.
-
-## Handing this to an AI coding agent for further work
-If you want an agent (Claude Code, Cursor, etc.) to keep building on this —
-add real content, wire up the form, convert it to Next.js/React, etc. —
-just point it at this folder and the placeholders marked `[PLACEHOLDER]`
-above are exactly what it should ask you for or fill in.
+Static site — no `npm install`, no build step. Drag the folder into
+Vercel/Netlify, or push to a GitHub repo and connect it for auto-deploys.
