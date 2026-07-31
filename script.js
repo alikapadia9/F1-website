@@ -39,24 +39,6 @@
     revealTargets.forEach(function (el) { el.classList.add("in-view"); });
   }
 
-  // ---- Hero typewriter greeting ----------------------------------------------
-  var typewriterEl = document.getElementById("typewriter");
-  var greeting = "Hi, I'm Fatema \u2014 let's get you road-ready.";
-  if (typewriterEl) {
-    if (reduceMotion) {
-      typewriterEl.textContent = greeting;
-    } else {
-      var i = 0;
-      (function typeChar() {
-        if (i <= greeting.length) {
-          typewriterEl.textContent = greeting.slice(0, i);
-          i++;
-          setTimeout(typeChar, 32);
-        }
-      })();
-    }
-  }
-
   // ---- Logbook dial arc: animate when scrolled into view ---------------------
   var dialArc = document.getElementById("dialArc");
   var logbookSection = document.getElementById("logbook");
@@ -120,40 +102,16 @@
     });
   });
 
-  // ---- Confetti celebration on enquiry submit ---------------------------------
-  var CONFETTI_COLORS = ["#7C5CFA", "#FFC94D", "#E8A400", "#FFFFFF", "#3E2A85"];
-
-  function fireConfetti(host) {
-    if (!host) return;
-    host.innerHTML = "";
-    if (reduceMotion) return; // keep the message, skip the falling pieces
-    var count = 36;
-    for (var n = 0; n < count; n++) {
-      var piece = document.createElement("span");
-      piece.className = "confetti-piece";
-      var size = 6 + Math.random() * 6;
-      piece.style.width = size + "px";
-      piece.style.height = (size * 0.4) + "px";
-      piece.style.left = (Math.random() * 100) + "%";
-      piece.style.background = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
-      piece.style.animationDuration = (1.6 + Math.random() * 1.2) + "s";
-      piece.style.animationDelay = (Math.random() * 0.4) + "s";
-      host.appendChild(piece);
-    }
-  }
-
+  // ---- Enquiry form: placeholder submit handler -------------------------------
   var form = document.getElementById("enquiryForm");
-  var celebration = document.getElementById("celebration");
-  var confettiHost = document.getElementById("confettiHost");
-  if (form && celebration) {
+  if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      // NOTE: this is where you wire up a real backend (Formspree, a
-      // serverless function, your CRM, etc.) before launch. For now it
-      // just shows the celebration so you can see/feel the intended flow.
-      form.hidden = true;
-      celebration.hidden = false;
-      fireConfetti(confettiHost);
+      alert(
+        "This form isn't wired up to anything yet \u2014 connect it to your " +
+        "email service, CRM, or a form backend (e.g. Formspree, a serverless " +
+        "function, or your booking tool) before launch."
+      );
     });
   }
 })();

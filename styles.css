@@ -169,35 +169,6 @@ strong{ color:var(--ink); }
 .hero__sub em{ color:var(--purple-deep); font-style:normal; font-weight:600; }
 .hero__actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
-.greeting{
-  margin-top:40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.greeting__avatar{
-  width:52px; height:52px; border-radius:50%; overflow:hidden; flex:none;
-  border:2px solid var(--white); box-shadow:0 6px 14px rgba(36,28,61,0.15);
-}
-.greeting__avatar img{ width:100%; height:100%; object-fit:cover; }
-.speech-bubble{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:10px 16px;
-  box-shadow:0 6px 16px rgba(36,28,61,0.08);
-  min-height:1.4em;
-  max-width:280px;
-  text-align:left;
-}
-.speech-bubble p{ margin:0; font-size:0.76rem; color:var(--purple-deep); }
-@media (min-width:640px){
-  .speech-bubble p{ font-size:0.82rem; white-space:nowrap; }
-  .speech-bubble{ max-width:none; }
-}
-
 /* ============================================================
    ROAD-SIGNATURE: traffic-light car animation
    ============================================================ */
@@ -239,16 +210,13 @@ strong{ color:var(--ink); }
 }
 .traffic-car{
   position:absolute; top:50%; left:-22%;
-  width:78px;
+  width:64px;
   transform:translateY(-50%);
   animation:carDrive 9s cubic-bezier(.45,0,.55,1) infinite;
   z-index:3;
 }
-.traffic-car img{ width:100%; border-radius:8px; box-shadow:0 4px 10px rgba(36,28,61,0.25); }
-.traffic-car__blinker{
-  position:absolute; top:2px; right:-3px; width:6px; height:6px; border-radius:50%;
-  background:var(--yellow); animation:blinker 0.6s steps(1) infinite;
-}
+.traffic-car__svg{ width:100%; height:auto; display:block; filter:drop-shadow(0 4px 6px rgba(36,28,61,0.25)); }
+.traffic-car__blinker{ animation:blinker 0.6s steps(1) infinite; }
 @keyframes blinker{ 50%{ opacity:0.15; } }
 @keyframes carDrive{
   0%{ left:-22%; }
@@ -363,30 +331,11 @@ strong{ color:var(--ink); }
 /* ============================================================
    CONTACT FORM + CELEBRATION
    ============================================================ */
-.enquiry-wrap{ position:relative; }
 .enquiry-form{ display:flex; flex-direction:column; gap:14px; background:var(--tint); border-radius:var(--radius); padding:26px; }
 .enquiry-form label{ display:flex; flex-direction:column; gap:6px; font-size:0.78rem; color:var(--grey); font-weight:600; }
 .enquiry-form input, .enquiry-form select{ background:var(--white); border:2px solid var(--line); border-radius:8px; padding:11px 13px; color:var(--ink); font-family:var(--font-body); font-size:0.92rem; }
 .enquiry-form input:focus, .enquiry-form select:focus, a:focus-visible, button:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
 .form-note{ font-size:0.7rem; color:var(--grey); margin:0; }
-
-.celebration{
-  position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center;
-  background:var(--tint);
-  border-radius:var(--radius);
-  overflow:hidden;
-}
-.celebration__confetti{ position:absolute; inset:0; pointer-events:none; }
-.confetti-piece{ position:absolute; top:-10px; border-radius:2px; opacity:0.95; animation:confettiFall linear forwards; }
-@keyframes confettiFall{
-  to{ transform:translateY(340px) rotate(540deg); opacity:0; }
-}
-.celebration__message{ position:relative; z-index:2; text-align:center; padding:32px; }
-.celebration__emoji{ font-size:2.4rem; display:block; margin-bottom:8px; animation:popIn 0.5s cubic-bezier(.34,1.56,.64,1); }
-@keyframes popIn{ 0%{ transform:scale(0); } 70%{ transform:scale(1.15); } 100%{ transform:scale(1); } }
-.celebration__message h3{ margin-bottom:6px; }
-.celebration__message p{ margin:0; font-size:0.9rem; }
 
 /* ============================================================
    FOOTER

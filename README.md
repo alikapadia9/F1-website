@@ -6,24 +6,21 @@ browser to preview, or drag the folder into Vercel/Netlify/GitHub Pages.
 ## What changed from v3
 - **Colour:** purple + white + warm yellow (replaces the sky-blue palette),
   chosen to contrast nicely against the blue car.
-- **Real images, not placeholders:** `assets/fatema-avatar.png` and
-  `assets/hatchback-car.png` are your actual uploaded images, copied into
-  the project so nothing looks unfinished. Swap them for higher-res
-  versions any time — same filenames, same folder.
-- **One photo spot, not two:** the hero now only has a small round avatar
-  icon next to the speech bubble; the single full-size photo lives in the
-  "Meet Fatema" section.
-- **New signature animation:** a small "traffic light" strip near the top
-  where the actual car image drives across, stops on red, and continues on
-  green (with a subtle blinking indicator). This replaces the earlier
-  scroll-linked road-strip idea — it's now a standalone looping animation,
-  not tied to scroll, and it's the only purely-decorative animation on the
-  page.
-- **Celebration on submit:** submitting the enquiry form now shows a
-  confetti burst + "Hurray! Your journey begins." message instead of a
-  plain alert (still needs a real backend wired in — see below).
+- **Real photo, one spot only:** Fatema's real photo
+  (`assets/fatema-avatar.png`) appears exactly once, in the "Meet Fatema"
+  section. No duplicate hero avatar.
+- **Traffic-light car animation, fixed:** the car in the signature strip is
+  now a simple flat SVG side-profile, drawn facing the direction it
+  actually drives (left → right), instead of the front-on car photo (which
+  looked wrong moving sideways). It still stops on red and goes on green,
+  with a small blinking indicator light near the front. The uploaded car
+  photo (`assets/hatchback-car.png`) is no longer used in this animation —
+  it's still in `assets/` if you want it elsewhere (e.g. as a page/social
+  preview image).
+- **Enquiry form reverted:** back to the plain form + alert placeholder
+  from earlier versions — no confetti/celebration overlay.
 - **No leftover placeholders in the copy:** the lesson-count, pick-up/
-  drop-off, and rescheduling FAQ answers are now filled in with sensible
+  drop-off, and rescheduling FAQ answers are filled in with sensible
   defaults based on common driving-instructor practice — read them and
   adjust anything that isn't accurate for how Fatema actually wants to run
   things.

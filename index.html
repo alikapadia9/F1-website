@@ -45,15 +45,6 @@
       <a href="#contact" class="btn btn--primary">Let's Get Started</a>
       <a href="#offer" class="btn btn--ghost">See how it works</a>
     </div>
-
-    <div class="greeting" data-reveal>
-      <span class="greeting__avatar">
-        <img src="assets/fatema-avatar.png" alt="Fatema" loading="lazy">
-      </span>
-      <div class="speech-bubble">
-        <p class="mono" id="typewriter"></p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -69,9 +60,20 @@
       </span>
       <span class="traffic-light__pole"></span>
     </div>
-    <div class="traffic-car">
-      <span class="traffic-car__blinker"></span>
-      <img src="assets/hatchback-car.png" alt="Fatema's 2024 automatic hatchback" loading="lazy">
+    <div class="traffic-car" aria-hidden="true">
+      <svg viewBox="0 0 120 56" class="traffic-car__svg">
+        <ellipse cx="60" cy="49" rx="46" ry="4" fill="rgba(36,28,61,0.15)"/>
+        <path d="M8 34 Q10 28 18 26 L28 14 Q34 8 44 8 H78 Q90 8 96 18 L106 26 Q116 28 116 36 V40 H8 Z" fill="#2F8FE0"/>
+        <path d="M32 15 Q37 10 44 10 H70 Q78 10 84 17 L88 26 H30 Z" fill="#BFE0FF" opacity="0.9"/>
+        <rect x="8" y="34" width="108" height="6" rx="3" fill="#1E63AE"/>
+        <circle cx="32" cy="40" r="10" fill="#1E2A3A"/>
+        <circle cx="32" cy="40" r="4" fill="#C9D6E4"/>
+        <circle cx="90" cy="40" r="10" fill="#1E2A3A"/>
+        <circle cx="90" cy="40" r="4" fill="#C9D6E4"/>
+        <rect x="106" y="20" width="6" height="5" rx="1.5" fill="#FFE9B3"/>
+        <rect x="8" y="27" width="5" height="4" rx="1.5" fill="#E8494B"/>
+        <circle class="traffic-car__blinker" cx="112" cy="27" r="2.6" fill="#FFC94D"/>
+      </svg>
     </div>
   </div>
   <p class="road-signature__caption mono center">EVERY LESSON, BY THE RULES.</p>
@@ -337,40 +339,28 @@
       </a>
     </div>
 
-    <div class="split__media enquiry-wrap">
-      <form class="enquiry-form" data-reveal id="enquiryForm">
-        <label>Name
-          <input type="text" name="name" required>
-        </label>
-        <label>Phone or email
-          <input type="text" name="contact" required>
-        </label>
-        <label>Suburb / postcode
-          <input type="text" name="suburb">
-        </label>
-        <label>What do you need?
-          <select name="need">
-            <option>Already know how to drive — need my NSW test</option>
-            <option>Learner's licence package</option>
-            <option>Pre-test confidence tune-up</option>
-            <option>Upgrading to full licence</option>
-            <option>Not sure yet</option>
-          </select>
-        </label>
-        <button type="submit" class="btn btn--primary btn--block">Send enquiry</button>
-        <p class="form-note">This form is a placeholder — connect it to your email/CRM of choice before launch.</p>
-      </form>
-
-      <!-- Celebration overlay, shown after submit -->
-      <div class="celebration" id="celebration" hidden>
-        <div class="celebration__confetti" id="confettiHost" aria-hidden="true"></div>
-        <div class="celebration__message">
-          <span class="celebration__emoji">🎉</span>
-          <h3>Hurray! Your journey begins.</h3>
-          <p>Thanks — Fatema (or the team) will be in touch shortly.</p>
-        </div>
-      </div>
-    </div>
+    <form class="split__media enquiry-form" data-reveal id="enquiryForm">
+      <label>Name
+        <input type="text" name="name" required>
+      </label>
+      <label>Phone or email
+        <input type="text" name="contact" required>
+      </label>
+      <label>Suburb / postcode
+        <input type="text" name="suburb">
+      </label>
+      <label>What do you need?
+        <select name="need">
+          <option>Already know how to drive — need my NSW test</option>
+          <option>Learner's licence package</option>
+          <option>Pre-test confidence tune-up</option>
+          <option>Upgrading to full licence</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <button type="submit" class="btn btn--primary btn--block">Send enquiry</button>
+      <p class="form-note">This form is a placeholder — connect it to your email/CRM of choice before launch.</p>
+    </form>
   </div>
 </section>
 
