@@ -102,16 +102,31 @@
     });
   });
 
-  // ---- Enquiry form: placeholder submit handler -------------------------------
+  // ---- Enquiry form: forward straight to WhatsApp -----------------------------
   var form = document.getElementById("enquiryForm");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      alert(
-        "This form isn't wired up to anything yet \u2014 connect it to your " +
-        "email service, CRM, or a form backend (e.g. Formspree, a serverless " +
-        "function, or your booking tool) before launch."
-      );
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      var name = form.elements["name"].value.trim();
+      var contact = form.elements["contact"].value.trim();
+      var suburb = form.elements["suburb"].value.trim();
+      var need = form.elements["need"].value;
+      var lines = [
+        "New enquiry from the website:",
+        "Name: " + name,
+        "Phone/email: " + contact
+      ];
+      if (suburb) lines.push("Suburb/postcode: " + suburb);
+      lines.push("Need: " + need);
+
+      var num = (window.SITE_CONFIG && SITE_CONFIG.whatsappNumber) || "";
+      var url = "https://wa.me/" + num.replace(/\D/g, "") + "?text=" + encodeURIComponent(lines.join("\n"));
+      window.open(url, "_blank", "noopener");
+      form.reset();
     });
   }
 })();

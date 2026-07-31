@@ -40,10 +40,12 @@ browser to preview, or drag the folder into Vercel/Netlify/GitHub Pages.
 2. Read through the FAQ answers I filled in (lesson count, pick-up/drop-off,
    rescheduling) and correct anything that doesn't match how Fatema
    actually wants to operate.
-3. Wire the enquiry form up to a real backend — it currently shows the
-   confetti celebration but doesn't send the data anywhere. Options:
-   Formspree, Getform, a small serverless function, or your CRM/booking
-   tool's form embed.
+3. The enquiry form now forwards straight to WhatsApp — submitting it opens
+   a wa.me chat (to the number in `config.js`) with the visitor's name,
+   contact, suburb/postcode, and need pre-filled as the message text. If you
+   also want enquiries to land in an inbox/CRM, wire it up additionally to
+   Formspree, Getform, a small serverless function, or your booking tool's
+   form embed.
 4. Double check the WhatsApp number in `config.js` and test the button
    from an actual phone browser once the site is live (not from a local
    file preview) — see the note on `wa.me` behaviour below.
