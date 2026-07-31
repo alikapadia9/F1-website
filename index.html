@@ -3,29 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>F One on One — Driving Lessons, Newcastle · Central Coast · Sydney</title>
-<meta name="description" content="One-on-one driving lessons with a NSW-licensed instructor in a dual-control car. Newcastle, Central Coast &amp; Sydney.">
+<title>F One on One — Driving Lessons for Adults, Newcastle · Central Coast · Sydney</title>
+<meta name="description" content="One-on-one driving lessons for adults: test prep and licence conversion, or fixed logbook hours with a licensed instructor. Newcastle, Central Coast &amp; Sydney.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Rev-limiter progress strip (mobile) / side gauge (desktop) -->
-<div class="gauge" id="gauge" aria-hidden="true">
-  <div class="gauge__track">
-    <div class="gauge__fill" id="gaugeFill"></div>
-  </div>
-  <div class="gauge__label">CONFIDENCE</div>
-</div>
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__fill" id="scrollFill"></div></div>
 
-<header class="nav">
-  <a href="#top" class="nav__logo">F <span>ONE</span> ON ONE</a>
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo">F <span>One</span> on One</a>
   <nav class="nav__links">
+    <a href="#process">How it works</a>
+    <a href="#pricing">Pricing</a>
     <a href="#instructor">Instructor</a>
-    <a href="#offer">Lessons</a>
-    <a href="#logbook">Logbook</a>
     <a href="#areas">Areas</a>
     <a href="#faq">FAQ</a>
   </nav>
@@ -34,204 +28,354 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero__stripes" aria-hidden="true">
-    <span></span><span></span><span></span>
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__spotlight"></div>
   </div>
   <div class="hero__inner">
-    <p class="eyebrow mono">NSW LICENSED INSTRUCTOR &middot; DUAL CONTROL</p>
+    <p class="eyebrow center"><span data-text-reveal>Licensed instructor &middot; dual-control vehicle</span></p>
     <h1 class="hero__title">
-      <span class="line" data-reveal>Your driving journey</span>
-      <span class="line line--accent" data-reveal>starts on pole.</span>
+      <span class="line" data-text-reveal>Get licensed properly.</span>
+      <span class="line line--accent" data-text-reveal>Without wasting your time.</span>
     </h1>
     <p class="hero__sub" data-reveal>
-      One-on-one lessons built around you — whether it's your first hour on
-      a learner's licence or the final polish before your test.
-      Newcastle &middot; Central Coast &middot; Sydney.
+      One-on-one lessons for adults who already know how to drive, or need a
+      fixed number of instructor hours logged. Structured, efficient, and
+      run in a dual-control car. Newcastle &middot; Central Coast &middot; Sydney.
     </p>
     <div class="hero__actions" data-reveal>
-      <a href="#contact" class="btn btn--primary">Book your first lesson</a>
-      <a href="#offer" class="btn btn--ghost">See what's on offer</a>
+      <a href="#contact" class="btn btn--primary">Book a lesson</a>
+      <a href="#process" class="btn btn--ghost">See how it works</a>
     </div>
   </div>
-  <div class="hero__flag" aria-hidden="true"></div>
+  <a href="#readiness" class="hero__teaser" data-reveal aria-label="See the readiness panel">
+    <div class="hero__teaser-row">
+      <span class="hero__teaser-label">Readiness panel</span>
+      <span class="hero__teaser-chevron">&darr;</span>
+    </div>
+    <div class="hero__teaser-bars" aria-hidden="true"><span></span><span></span><span></span></div>
+  </a>
+</section>
+
+<!-- ============ READINESS PANEL (signature element) ============ -->
+<section class="section readiness" id="readiness">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Readiness panel</p>
+      <h2>Progress you can actually see.</h2>
+      <p>Not a vague sense that things are "going well." A running read on the
+      specific areas examiners check, updated every lesson — this is an
+      illustrative example of how it looks.</p>
+    </div>
+
+    <div class="readiness__grid">
+      <div class="readiness__sticky">
+        <div class="readiness-panel" data-reveal>
+          <div class="readiness-panel__head">
+            <p class="readiness-panel__eyebrow">Example snapshot</p>
+            <h3>Your readiness panel</h3>
+            <p class="readiness-panel__note">Reviewed with you at the end of every lesson.</p>
+          </div>
+          <ul class="readiness-panel__list">
+            <li class="readiness-metric" data-metric="hazard">
+              <div class="readiness-metric__row">
+                <span class="readiness-metric__label">Hazard perception</span>
+                <span class="readiness-metric__value tabular" data-value>0%</span>
+              </div>
+              <div class="readiness-metric__bar"><div class="readiness-metric__fill" data-fill data-target="92"></div></div>
+            </li>
+            <li class="readiness-metric" data-metric="rules">
+              <div class="readiness-metric__row">
+                <span class="readiness-metric__label">Road rules</span>
+                <span class="readiness-metric__value tabular" data-value>0%</span>
+              </div>
+              <div class="readiness-metric__bar"><div class="readiness-metric__fill" data-fill data-target="88"></div></div>
+            </li>
+            <li class="readiness-metric" data-metric="confidence">
+              <div class="readiness-metric__row">
+                <span class="readiness-metric__label">Test confidence</span>
+                <span class="readiness-metric__value tabular" data-value>0%</span>
+              </div>
+              <div class="readiness-metric__bar"><div class="readiness-metric__fill" data-fill data-target="95"></div></div>
+            </li>
+            <li class="readiness-metric" data-metric="logbook">
+              <div class="readiness-metric__row">
+                <span class="readiness-metric__label">Logbook hours logged</span>
+                <span class="readiness-metric__value tabular" data-value>0%</span>
+              </div>
+              <div class="readiness-metric__bar"><div class="readiness-metric__fill" data-fill data-target="90"></div></div>
+              <p class="readiness-metric__context">27 of 30 scheduled hours</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="readiness__steps">
+        <div class="readiness-step" data-reveal data-metric-trigger="hazard">
+          <span class="readiness-step__num">01</span>
+          <h4>Hazard perception</h4>
+          <p>Spotting what matters — a car about to pull out, a pedestrian
+          about to step off — early enough to respond calmly instead of
+          reacting late. This is one of the most common reasons for a fail,
+          and one of the most trainable.</p>
+        </div>
+        <div class="readiness-step" data-reveal data-metric-trigger="rules">
+          <span class="readiness-step__num">02</span>
+          <h4>Road rules, precisely</h4>
+          <p>Give-way lines, roundabouts, school zones, signage — the local
+          detail that trips up even experienced drivers, especially if
+          you've been driving under a different set of rules overseas.</p>
+        </div>
+        <div class="readiness-step" data-reveal data-metric-trigger="confidence">
+          <span class="readiness-step__num">03</span>
+          <h4>Test-day confidence</h4>
+          <p>Running the manoeuvres and routes you'll actually be assessed on
+          until they're routine, so test day is a formality, not a surprise.</p>
+        </div>
+        <div class="readiness-step" data-reveal data-metric-trigger="logbook">
+          <span class="readiness-step__num">04</span>
+          <h4>Logbook hours, done properly</h4>
+          <p>If you need a fixed number of supervised hours, every one of
+          them is logged correctly and spent on something useful — not
+          just clocked.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO THIS IS FOR ============ -->
+<section class="section section--alt" id="who">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <p class="eyebrow center">Who this is for</p>
+      <h2>Two starting points. One outcome.</h2>
+    </div>
+    <div class="grid grid--2 stagger">
+      <div class="path-card" data-reveal>
+        <div class="path-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Already know how to drive?</h3>
+        <p>Years of experience, maybe a full licence from another country.
+        What you need isn't beginner lessons — it's local road rules,
+        test-specific technique, and an honest read on where you stand.</p>
+        <ul class="path-card__list">
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Licence conversion &amp; test prep</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Local rules, signage &amp; test routes</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mock test with honest feedback</li>
+        </ul>
+        <a href="#pricing" class="path-card__cta">Get test-ready <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="path-card" data-reveal>
+        <div class="path-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Need instructor hours logged?</h3>
+        <p>A course or logbook requires a fixed number of hours with a
+        licensed instructor. We record them correctly and use the time on
+        the things that will actually matter for your test.</p>
+        <ul class="path-card__list">
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Hours logged correctly, every time</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Dual-control vehicle, flexible booking</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Structured plan, not clock-watching</li>
+        </ul>
+        <a href="#pricing" class="path-card__cta">See packages <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAST-TRACK LOOP ============ -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <p class="eyebrow center">How it works</p>
+      <h2>The fast-track loop.</h2>
+      <p>Three stages, repeated as needed. No wasted lessons.</p>
+    </div>
+    <div class="loop">
+      <div class="loop__track"><div class="loop__track-fill" id="loopFill"></div></div>
+      <div class="loop__steps">
+        <div class="loop__step" data-loop-step="1">
+          <span class="loop__check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="loop__step-num">Step 1</span>
+          <h3>Assess</h3>
+          <p>An honest read on where you're at — what's solid, what needs
+          work, and how far you are from test-ready. No guessing.</p>
+        </div>
+        <div class="loop__step" data-loop-step="2">
+          <span class="loop__check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="loop__step-num">Step 2</span>
+          <h3>Correct</h3>
+          <p>Targeted lessons on exactly the gaps that matter, in a
+          dual-control car, with direct feedback after every drive.</p>
+        </div>
+        <div class="loop__step" data-loop-step="3">
+          <span class="loop__check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="loop__step-num">Step 3</span>
+          <h3>Certify</h3>
+          <p>A final run-through against the real test standard, so test day
+          confirms what you already know: you're ready.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON TABLE ============ -->
+<section class="section section--alt" id="compare">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <p class="eyebrow center">Why a licensed instructor</p>
+      <h2>Compare your options.</h2>
+    </div>
+    <p class="compare__hint">Swipe to see all columns &rarr;</p>
+    <div class="compare" data-reveal>
+      <table class="compare__table" role="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Self-practice</th>
+            <th scope="col">Family-supervised</th>
+            <th scope="col" class="compare__col--highlight">Licensed instructor</th>
+          </tr>
+        </thead>
+        <tbody id="compareBody">
+          <tr>
+            <th scope="row">Hours counted</th>
+            <td>Yes — 1 logged hour per hour driven</td>
+            <td>Yes — 1 logged hour per hour driven</td>
+            <td class="compare__col--highlight">Yes — some schemes credit extra hours per lesson</td>
+          </tr>
+          <tr>
+            <th scope="row">Feedback quality</th>
+            <td>None — you're both driver and judge</td>
+            <td>Informal, well-meaning, not test-calibrated</td>
+            <td class="compare__col--highlight">Structured and test-calibrated, every lesson</td>
+          </tr>
+          <tr>
+            <th scope="row">Pass-rate confidence</th>
+            <td>Unknown until test day</td>
+            <td>Better, but untested against examiner standard</td>
+            <td class="compare__col--highlight">Checked against the same criteria examiners use</td>
+          </tr>
+          <tr>
+            <th scope="row">Cost</th>
+            <td>Free, aside from fuel and insurance risk</td>
+            <td>Free, aside from shared risk and patience</td>
+            <td class="compare__col--highlight">Paid — priced per hour or package</td>
+          </tr>
+          <tr>
+            <th scope="row">Availability</th>
+            <td>Whenever a car and licence-holder are free</td>
+            <td>Depends on someone else's schedule</td>
+            <td class="compare__col--highlight">Booked directly, dual-control car included</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine-print" style="margin-top:20px;font-size:0.82rem;color:var(--text-faint);">Hour-crediting schemes vary by state and course — confirm current rules for your situation in the FAQ below.</p>
+  </div>
 </section>
 
 <!-- ============ MEET YOUR INSTRUCTOR ============ -->
-<section class="section section--charcoal" id="instructor">
+<section class="section" id="instructor">
   <div class="container split">
     <div class="split__media" data-reveal>
       <div class="photo-frame">
         <div class="photo-frame__placeholder">[PLACEHOLDER: instructor photo]</div>
-        <span class="photo-frame__tag mono">NSW INSTR. LIC. [PLACEHOLDER]</span>
+        <span class="photo-frame__tag">Instructor licence [PLACEHOLDER]</span>
       </div>
     </div>
     <div class="split__text" data-reveal>
-      <p class="eyebrow mono">MEET YOUR INSTRUCTOR</p>
+      <p class="eyebrow">Meet your instructor</p>
       <h2>Hi, I'm [PLACEHOLDER NAME].</h2>
       <p>
-        [PLACEHOLDER: a couple of warm, human sentences about who your sister
-        is, why she became an instructor, and what students can expect from a
-        lesson with her — patient, encouraging, no judgement, at your pace.]
+        [PLACEHOLDER: a couple of sentences — how long you've been instructing,
+        the kinds of drivers you work with most (licence conversions, logbook
+        hours, test prep), and what a lesson with you is actually like:
+        direct, structured, and clear about what's being worked on and why.]
       </p>
       <ul class="credential-list">
-        <li><span class="dot"></span> Licensed NSW driving instructor</li>
-        <li><span class="dot"></span> Dual-control vehicle — an extra set of eyes and an extra brake</li>
-        <li><span class="dot"></span> Lessons in [PLACEHOLDER: manual / automatic / both]</li>
+        <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Licensed driving instructor [PLACEHOLDER: licence no.]</li>
+        <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Dual-control vehicle</li>
+        <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Lessons in [PLACEHOLDER: manual / automatic / both]</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ WHY DUAL CONTROL ============ -->
-<section class="section" id="dual-control">
+<!-- ============ PRICING ============ -->
+<section class="section section--alt" id="pricing">
   <div class="container">
-    <p class="eyebrow mono center">WHY DUAL CONTROL</p>
-    <h2 class="center">A second set of controls means a calmer first drive.</h2>
-    <div class="grid grid--3">
-      <div class="card" data-reveal>
-        <div class="card__icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none"><path d="M24 6L6 16v16l18 10 18-10V16L24 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 6v36M6 16l18 10 18-10" stroke="currentColor" stroke-width="2"/></svg>
-        </div>
-        <h3>An extra brake, always ready</h3>
-        <p>Your instructor can safely step in the instant it's needed — so a hesitation or a wrong move never becomes a scary moment.</p>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card__icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-        <h3>You learn at your own pace</h3>
-        <p>No pressure, no rush. Every lesson is shaped around where you're at — whether that's your very first turn of the wheel or your last lesson before test day.</p>
-      </div>
-      <div class="card" data-reveal>
-        <div class="card__icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none"><path d="M8 34l8-16h16l8 16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="34" r="3" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="34" r="3" stroke="currentColor" stroke-width="2"/></svg>
-        </div>
-        <h3>Real confidence, not just a pass</h3>
-        <p>The goal isn't just passing your test — it's feeling genuinely comfortable behind the wheel afterwards, on any road, in any traffic.</p>
-      </div>
+    <div class="section-head center" data-reveal>
+      <p class="eyebrow center">Pricing</p>
+      <h2>Three ways to work together.</h2>
+      <p>[PLACEHOLDER PRICING — figures below are placeholders until confirmed.]</p>
     </div>
-  </div>
-</section>
-
-<!-- ============ WHAT WE OFFER ============ -->
-<section class="section section--black" id="offer">
-  <div class="container">
-    <p class="eyebrow mono center">WHAT WE OFFER</p>
-    <h2 class="center">Lessons that fit where you're starting from.</h2>
-    <div class="grid grid--2">
-      <div class="offer-card" data-reveal>
-        <span class="offer-card__num mono">01</span>
-        <h3>One-on-one lessons</h3>
-        <p>Casual, no lock-in bookings. Perfect if you want to build hours steadily or brush up on a specific skill.</p>
-        <span class="offer-card__price mono">[PLACEHOLDER PRICING]</span>
-      </div>
-      <div class="offer-card" data-reveal>
-        <span class="offer-card__num mono">02</span>
-        <h3>Learner's licence packages</h3>
-        <p>A structured run of lessons designed to build real skill and bank logbook hours efficiently under the 3-for-1 scheme.</p>
-        <span class="offer-card__price mono">[PLACEHOLDER PRICING]</span>
-      </div>
-      <div class="offer-card" data-reveal>
-        <span class="offer-card__num mono">03</span>
-        <h3>Pre-test prep &amp; mock tests</h3>
-        <p>A focused session covering the exact test route skills, with honest feedback so there are no surprises on the day.</p>
-        <span class="offer-card__price mono">[PLACEHOLDER PRICING]</span>
-      </div>
-      <div class="offer-card" data-reveal>
-        <span class="offer-card__num mono">04</span>
-        <h3>Learner's → full licence upgrade</h3>
-        <p>Already have your P's in sight? Targeted lessons to sharpen the higher-speed and independent-driving skills you'll need.</p>
-        <span class="offer-card__price mono">[PLACEHOLDER PRICING]</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3-FOR-1 LOGBOOK EXPLAINER ============ -->
-<section class="section section--charcoal" id="logbook">
-  <div class="container split split--reverse">
-    <div class="split__text" data-reveal>
-      <p class="eyebrow mono">THE LOGBOOK, EXPLAINED</p>
-      <h2>Every lesson works triple time.</h2>
-      <p>
-        In NSW, learners under 25 need 120 logbook hours (including 20 night
-        hours) before their test. Under the <strong>3-for-1 scheme</strong>,
-        every hour of structured lessons with a licensed instructor counts as
-        <strong>3 logbook hours</strong> — up to 10 lesson-hours, or 30
-        logbook hours total. Learners 25 and over are exempt from the
-        logbook requirement.
-      </p>
-      <p class="fine-print">
-        Rules can change — always confirm current requirements on the
-        <a href="https://www.transport.nsw.gov.au/roadsafety/young-drivers/learners" target="_blank" rel="noopener">Transport for NSW website</a>.
-      </p>
-    </div>
-    <div class="split__media" data-reveal>
-      <div class="logbook-dial">
-        <svg viewBox="0 0 240 140" class="logbook-dial__svg">
-          <path d="M20 120 A100 100 0 0 1 220 120" fill="none" stroke="rgba(245,245,242,0.12)" stroke-width="14" stroke-linecap="round"/>
-          <path id="dialArc" d="M20 120 A100 100 0 0 1 220 120" fill="none" stroke="#E10600" stroke-width="14" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314"/>
-        </svg>
-        <div class="logbook-dial__readout">
-          <span class="logbook-dial__hours mono">1hr <span class="logbook-dial__arrow">&rarr;</span> 3hrs</span>
-          <span class="logbook-dial__caption">logged, per lesson</span>
-        </div>
-      </div>
-    </div>
+    <div class="grid grid--3 stagger" id="pricingGrid"></div>
   </div>
 </section>
 
 <!-- ============ AREAS SERVICED ============ -->
-<section class="section section--black" id="areas">
+<section class="section" id="areas">
   <div class="container">
-    <p class="eyebrow mono center">AREAS SERVICED</p>
-    <h2 class="center">Three regions, one instructor.</h2>
-    <div class="track-map" data-reveal>
-      <svg viewBox="0 0 800 260" class="track-map__svg">
-        <path id="trackPath" d="M60 60 C 220 20, 300 200, 400 150 S 620 40, 740 130"
-          fill="none" stroke="rgba(245,245,242,0.15)" stroke-width="3"/>
-        <path id="trackPathAnim" d="M60 60 C 220 20, 300 200, 400 150 S 620 40, 740 130"
-          fill="none" stroke="#E10600" stroke-width="3" stroke-dasharray="900" stroke-dashoffset="900"/>
-        <g class="track-node">
-          <circle cx="60" cy="60" r="8" fill="#0B0D10" stroke="#E10600" stroke-width="3"/>
-          <text x="60" y="34" text-anchor="middle">Newcastle</text>
-        </g>
-        <g class="track-node">
-          <circle cx="400" cy="150" r="8" fill="#0B0D10" stroke="#E10600" stroke-width="3"/>
-          <text x="400" y="188" text-anchor="middle">Central Coast</text>
-        </g>
-        <g class="track-node">
-          <circle cx="740" cy="130" r="8" fill="#0B0D10" stroke="#E10600" stroke-width="3"/>
-          <text x="740" y="104" text-anchor="middle">Sydney</text>
-        </g>
-      </svg>
+    <div class="section-head center" data-reveal>
+      <p class="eyebrow center">Areas serviced</p>
+      <h2>Three regions, one instructor.</h2>
     </div>
-    <p class="center track-map__note">Don't see your suburb listed? <a href="#contact">Ask anyway</a> — coverage is growing.</p>
+    <div class="grid grid--3 stagger">
+      <div class="area-card" data-reveal>
+        <div class="area-card__pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div><h3>Newcastle</h3><p>City &amp; surrounding suburbs</p></div>
+      </div>
+      <div class="area-card" data-reveal>
+        <div class="area-card__pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div><h3>Central Coast</h3><p>Gosford to Wyong</p></div>
+      </div>
+      <div class="area-card" data-reveal>
+        <div class="area-card__pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div><h3>Sydney</h3><p>Northern suburbs</p></div>
+      </div>
+    </div>
+    <p class="center areas__note">Don't see your suburb listed? <a href="#contact">Ask anyway</a> — coverage is growing.</p>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="section section--charcoal" id="faq">
+<section class="section section--alt" id="faq">
   <div class="container narrow">
-    <p class="eyebrow mono center">FAQ</p>
-    <h2 class="center">Good questions.</h2>
+    <div class="section-head center" data-reveal>
+      <p class="eyebrow center">FAQ</p>
+      <h2>Good questions.</h2>
+    </div>
     <div class="accordion">
       <div class="accordion__item" data-reveal>
         <button class="accordion__trigger">
-          <span>What do I need for my first lesson?</span>
+          <span>What do I need to bring to my first lesson?</span>
           <span class="accordion__icon">+</span>
         </button>
         <div class="accordion__panel">
-          <p>[PLACEHOLDER: e.g. your learner's permit, glasses if you wear them, comfortable closed-toe shoes.]</p>
+          <p>[PLACEHOLDER: e.g. your learner's or overseas licence, glasses if you wear them, comfortable closed-toe shoes.]</p>
         </div>
       </div>
       <div class="accordion__item" data-reveal>
         <button class="accordion__trigger">
-          <span>Can I use these lessons for my Safer Drivers Course hours?</span>
+          <span>Do lesson hours count toward my logbook or course requirement?</span>
           <span class="accordion__icon">+</span>
         </button>
         <div class="accordion__panel">
-          <p>[PLACEHOLDER: clarify whether you run/refer the Safer Drivers Course, or whether this is separate.]</p>
+          <p>[PLACEHOLDER: confirm current hour-crediting rules for your jurisdiction and how many hours are required.]</p>
+        </div>
+      </div>
+      <div class="accordion__item" data-reveal>
+        <button class="accordion__trigger">
+          <span>I already have an overseas licence — do I still need lessons?</span>
+          <span class="accordion__icon">+</span>
+        </button>
+        <div class="accordion__panel">
+          <p>[PLACEHOLDER: explain conversion requirements, whether a local test is mandatory, and what lessons cover — local rules and test technique, not learning to drive from scratch.]</p>
         </div>
       </div>
       <div class="accordion__item" data-reveal>
@@ -245,11 +389,20 @@
       </div>
       <div class="accordion__item" data-reveal>
         <button class="accordion__trigger">
-          <span>What if I need to reschedule?</span>
+          <span>What's the cancellation policy?</span>
           <span class="accordion__icon">+</span>
         </button>
         <div class="accordion__panel">
-          <p>[PLACEHOLDER: your rescheduling / cancellation policy.]</p>
+          <p>[PLACEHOLDER: your rescheduling / cancellation policy and notice period.]</p>
+        </div>
+      </div>
+      <div class="accordion__item" data-reveal>
+        <button class="accordion__trigger">
+          <span>Do you offer lessons in languages other than English?</span>
+          <span class="accordion__icon">+</span>
+        </button>
+        <div class="accordion__panel">
+          <p>[PLACEHOLDER: list any additional languages supported, if relevant.]</p>
         </div>
       </div>
     </div>
@@ -257,12 +410,13 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="section section--black" id="contact">
+<section class="section" id="contact">
   <div class="container split">
     <div class="split__text" data-reveal>
-      <p class="eyebrow mono">GET IN TOUCH</p>
+      <p class="eyebrow">Get in touch</p>
       <h2>Ready when you are.</h2>
-      <p>Send an enquiry and we'll be in touch — or message directly on WhatsApp for the fastest reply.</p>
+      <p>Send an enquiry and we'll be in touch, or message directly on
+      WhatsApp for the fastest reply.</p>
       <a href="#" id="whatsappBtn" class="btn btn--whatsapp" aria-label="Message us on WhatsApp">
         <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.68 4.56 1.86 6.42L4 29l7.76-1.82a11.94 11.94 0 0 0 4.26.78h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3Zm0 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-4.6 1.08 1.1-4.48-.24-.37a9.78 9.78 0 0 1-1.52-5.24C5.35 9.55 10.14 4.9 16.02 4.9c2.62 0 5.08 1.02 6.94 2.88a9.72 9.72 0 0 1 2.87 6.94c0 5.88-4.79 10.66-9.81 10.66Zm5.62-7.98c-.31-.16-1.83-.9-2.11-1-.28-.1-.49-.16-.7.16-.2.31-.8 1-.98 1.2-.18.21-.36.23-.67.08-.31-.16-1.29-.48-2.46-1.53-.91-.81-1.52-1.82-1.7-2.13-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.55.16-.18.2-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.7-1.7-.97-2.33-.25-.6-.5-.52-.7-.53l-.6-.01c-.21 0-.55.08-.83.39-.28.31-1.09 1.06-1.09 2.6 0 1.52 1.12 3 1.28 3.21.16.21 2.21 3.37 5.35 4.72.75.32 1.33.51 1.79.66.75.24 1.43.2 1.97.13.6-.09 1.83-.75 2.09-1.47.26-.73.26-1.35.18-1.48-.08-.13-.28-.21-.6-.36Z"/></svg>
         <span>Message on WhatsApp</span>
@@ -280,10 +434,9 @@
       </label>
       <label>What do you need?
         <select name="need">
-          <option>First lessons — brand new to driving</option>
-          <option>Learner's licence package</option>
-          <option>Pre-test prep</option>
-          <option>Upgrading to full licence</option>
+          <option>Test prep / licence conversion</option>
+          <option>Logbook or course hours</option>
+          <option>Structured package</option>
           <option>Not sure yet</option>
         </select>
       </label>
@@ -295,8 +448,8 @@
 
 <footer class="footer">
   <div class="container footer__inner">
-    <span class="nav__logo">F <span>ONE</span> ON ONE</span>
-    <p class="mono">NEWCASTLE &middot; CENTRAL COAST &middot; SYDNEY</p>
+    <span class="nav__logo">F <span>One</span> on One</span>
+    <p>Newcastle &middot; Central Coast &middot; Sydney</p>
     <a href="#" id="whatsappFooter" class="footer__whatsapp" aria-label="Message us on WhatsApp">
       <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.68 4.56 1.86 6.42L4 29l7.76-1.82a11.94 11.94 0 0 0 4.26.78h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3Z"/></svg>
     </a>
