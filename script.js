@@ -1,5 +1,5 @@
 // ============================================================
-// F ONE ON ONE — INTERACTIONS (v3)
+// F ONE ON ONE — INTERACTIONS (v4)
 // Vanilla JS, no build step. Respects prefers-reduced-motion.
 // ============================================================
 (function () {
@@ -56,21 +56,6 @@
       })();
     }
   }
-
-  // ---- Road-journey car: travels the left-edge road as the page scrolls -----
-  var roadCar = document.getElementById("roadCar");
-  function updateRoadCar() {
-    if (!roadCar) return;
-    var doc = document.documentElement;
-    var scrollTop = window.scrollY || doc.scrollTop;
-    var scrollHeight = doc.scrollHeight - doc.clientHeight;
-    var pct = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
-    var trackHeight = window.innerHeight - 60; // keep car within visible viewport strip
-    roadCar.style.top = (pct * trackHeight) + "px";
-  }
-  window.addEventListener("scroll", updateRoadCar, { passive: true });
-  window.addEventListener("resize", updateRoadCar);
-  updateRoadCar();
 
   // ---- Logbook dial arc: animate when scrolled into view ---------------------
   var dialArc = document.getElementById("dialArc");
@@ -135,16 +120,40 @@
     });
   });
 
-  // ---- Enquiry form: placeholder submit handler -------------------------------
+  // ---- Confetti celebration on enquiry submit ---------------------------------
+  var CONFETTI_COLORS = ["#7C5CFA", "#FFC94D", "#E8A400", "#FFFFFF", "#3E2A85"];
+
+  function fireConfetti(host) {
+    if (!host) return;
+    host.innerHTML = "";
+    if (reduceMotion) return; // keep the message, skip the falling pieces
+    var count = 36;
+    for (var n = 0; n < count; n++) {
+      var piece = document.createElement("span");
+      piece.className = "confetti-piece";
+      var size = 6 + Math.random() * 6;
+      piece.style.width = size + "px";
+      piece.style.height = (size * 0.4) + "px";
+      piece.style.left = (Math.random() * 100) + "%";
+      piece.style.background = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
+      piece.style.animationDuration = (1.6 + Math.random() * 1.2) + "s";
+      piece.style.animationDelay = (Math.random() * 0.4) + "s";
+      host.appendChild(piece);
+    }
+  }
+
   var form = document.getElementById("enquiryForm");
-  if (form) {
+  var celebration = document.getElementById("celebration");
+  var confettiHost = document.getElementById("confettiHost");
+  if (form && celebration) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      alert(
-        "This form isn't wired up to anything yet \u2014 connect it to your " +
-        "email service, CRM, or a form backend (e.g. Formspree, a serverless " +
-        "function, or your booking tool) before launch."
-      );
+      // NOTE: this is where you wire up a real backend (Formspree, a
+      // serverless function, your CRM, etc.) before launch. For now it
+      // just shows the celebration so you can see/feel the intended flow.
+      form.hidden = true;
+      celebration.hidden = false;
+      fireConfetti(confettiHost);
     });
   }
 })();

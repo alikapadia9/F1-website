@@ -12,29 +12,10 @@
 </head>
 <body>
 
-<!-- Road-journey signature element: blue car travels this strip as you scroll -->
-<div class="road" id="road" aria-hidden="true">
-  <svg class="road__svg" viewBox="0 0 40 1000" preserveAspectRatio="none">
-    <line x1="20" y1="0" x2="20" y2="1000" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="14 14"/>
-  </svg>
-  <div class="road__car" id="roadCar">
-    <svg viewBox="0 0 64 40" class="road__car-svg">
-      <ellipse cx="32" cy="34" rx="26" ry="3" fill="rgba(20,40,60,0.15)"/>
-      <path d="M8 26 Q10 14 20 12 L26 6 H42 L50 12 Q58 14 58 24 V27 H8 Z" fill="#2F8FE0"/>
-      <rect x="20" y="12" width="22" height="9" rx="2" fill="#EAF6FF"/>
-      <circle cx="18" cy="28" r="6" fill="#1E2A3A"/>
-      <circle cx="18" cy="28" r="2.4" fill="#C9D6E4"/>
-      <circle cx="48" cy="28" r="6" fill="#1E2A3A"/>
-      <circle cx="48" cy="28" r="2.4" fill="#C9D6E4"/>
-      <circle cx="55" cy="18" r="2" fill="#FFE9B3"/>
-    </svg>
-  </div>
-</div>
-
 <header class="nav">
   <a href="#top" class="nav__logo">
     <span class="nav__logo-name">F <span>ONE</span> ON ONE</span>
-    <span class="nav__logo-tag mono" id="logoTag">DRIVING INSTRUCTOR</span>
+    <span class="nav__logo-tag mono">DRIVING INSTRUCTOR</span>
   </a>
   <nav class="nav__links">
     <a href="#instructor">Fatema</a>
@@ -48,14 +29,7 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero__sky" aria-hidden="true">
-    <div class="cloud cloud--1"></div>
-    <div class="cloud cloud--2"></div>
-    <div class="cloud cloud--3"></div>
-    <div class="sun"></div>
-  </div>
-
-  <div class="hero__inner">
+  <div class="container hero__inner">
     <p class="eyebrow mono" data-reveal>NSW LICENSED &middot; AUTOMATIC &middot; DUAL CONTROL</p>
     <h1 class="hero__title">
       <span class="line" data-reveal>You learn at your own pace.</span>
@@ -71,32 +45,44 @@
       <a href="#contact" class="btn btn--primary">Let's Get Started</a>
       <a href="#offer" class="btn btn--ghost">See how it works</a>
     </div>
-  </div>
 
-  <div class="hero__scene" data-reveal>
-    <div class="avatar-bubble">
-      <div class="avatar-frame">
-        <span class="avatar-frame__placeholder">[PLACEHOLDER:<br>Fatema's avatar]</span>
-      </div>
+    <div class="greeting" data-reveal>
+      <span class="greeting__avatar">
+        <img src="assets/fatema-avatar.png" alt="Fatema" loading="lazy">
+      </span>
       <div class="speech-bubble">
         <p class="mono" id="typewriter"></p>
-      </div>
-    </div>
-    <div class="hero__car">
-      <div class="car-frame">
-        <span class="car-frame__placeholder">[PLACEHOLDER:<br>2024 blue hatchback photo]</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ MEET FATEMA ============ -->
+<!-- ============ SIGNATURE: TRAFFIC-LIGHT ROAD ============ -->
+<section class="road-signature" aria-hidden="true">
+  <div class="road-strip">
+    <div class="road-strip__lane"></div>
+    <div class="traffic-light">
+      <span class="traffic-light__box">
+        <span class="traffic-light__lamp traffic-light__lamp--red"></span>
+        <span class="traffic-light__lamp traffic-light__lamp--yellow"></span>
+        <span class="traffic-light__lamp traffic-light__lamp--green"></span>
+      </span>
+      <span class="traffic-light__pole"></span>
+    </div>
+    <div class="traffic-car">
+      <span class="traffic-car__blinker"></span>
+      <img src="assets/hatchback-car.png" alt="Fatema's 2024 automatic hatchback" loading="lazy">
+    </div>
+  </div>
+  <p class="road-signature__caption mono center">EVERY LESSON, BY THE RULES.</p>
+</section>
+
+<!-- ============ MEET FATEMA (single photo spot) ============ -->
 <section class="section section--white" id="instructor">
   <div class="container split">
     <div class="split__media" data-reveal>
       <div class="photo-frame">
-        <span class="photo-frame__placeholder">[PLACEHOLDER: Fatema's avatar / photo]</span>
-        <span class="photo-frame__tag mono">NSW INSTR. LIC. [PLACEHOLDER]</span>
+        <img src="assets/fatema-avatar.png" alt="Fatema, your driving instructor" loading="lazy">
       </div>
     </div>
     <div class="split__text" data-reveal>
@@ -130,7 +116,7 @@
 </section>
 
 <!-- ============ WHY ONE-ON-ONE ============ -->
-<section class="section section--sky" id="dual-control">
+<section class="section section--tint" id="dual-control">
   <div class="container">
     <p class="eyebrow mono center">WHY ONE-ON-ONE</p>
     <h2 class="center">Full attention. Your pace. Real confidence.</h2>
@@ -205,8 +191,8 @@
   </div>
 </section>
 
-<!-- ============ LOGBOOK EXPLAINED (signature keep) ============ -->
-<section class="section section--sky" id="logbook">
+<!-- ============ LOGBOOK EXPLAINED ============ -->
+<section class="section section--tint" id="logbook">
   <div class="container split split--reverse">
     <div class="split__text" data-reveal>
       <p class="eyebrow mono">THE LOGBOOK, EXPLAINED</p>
@@ -233,9 +219,8 @@
     <div class="split__media" data-reveal>
       <div class="logbook-dial">
         <svg viewBox="0 0 240 150" class="logbook-dial__svg">
-          <path d="M20 125 A100 100 0 0 1 220 125" fill="none" stroke="rgba(30,42,58,0.12)" stroke-width="16" stroke-linecap="round"/>
-          <path id="dialArc" d="M20 125 A100 100 0 0 1 220 125" fill="none" stroke="#2F8FE0" stroke-width="16" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314"/>
-          <circle id="dialNeedlePivot" cx="120" cy="125" r="5" fill="#1E2A3A"/>
+          <path d="M20 125 A100 100 0 0 1 220 125" fill="none" stroke="rgba(36,28,61,0.12)" stroke-width="16" stroke-linecap="round"/>
+          <path id="dialArc" d="M20 125 A100 100 0 0 1 220 125" fill="none" stroke="#7C5CFA" stroke-width="16" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314"/>
         </svg>
         <div class="logbook-dial__readout">
           <span class="logbook-dial__hours mono">1 hr <span class="logbook-dial__arrow">&rarr;</span> 3 hrs</span>
@@ -254,19 +239,19 @@
     <div class="track-map" data-reveal>
       <svg viewBox="0 0 800 260" class="track-map__svg">
         <path id="trackPath" d="M60 60 C 220 20, 300 200, 400 150 S 620 40, 740 130"
-          fill="none" stroke="rgba(30,42,58,0.15)" stroke-width="3" stroke-dasharray="10 10"/>
+          fill="none" stroke="rgba(36,28,61,0.15)" stroke-width="3" stroke-dasharray="10 10"/>
         <path id="trackPathAnim" d="M60 60 C 220 20, 300 200, 400 150 S 620 40, 740 130"
-          fill="none" stroke="#2F8FE0" stroke-width="3" stroke-dasharray="900" stroke-dashoffset="900"/>
+          fill="none" stroke="#7C5CFA" stroke-width="3" stroke-dasharray="900" stroke-dashoffset="900"/>
         <g class="track-node">
-          <circle cx="60" cy="60" r="9" fill="#FFFFFF" stroke="#2F8FE0" stroke-width="3"/>
+          <circle cx="60" cy="60" r="9" fill="#FFFFFF" stroke="#7C5CFA" stroke-width="3"/>
           <text x="60" y="34" text-anchor="middle">Newcastle</text>
         </g>
         <g class="track-node">
-          <circle cx="400" cy="150" r="9" fill="#FFFFFF" stroke="#2F8FE0" stroke-width="3"/>
+          <circle cx="400" cy="150" r="9" fill="#FFFFFF" stroke="#7C5CFA" stroke-width="3"/>
           <text x="400" y="188" text-anchor="middle">Central Coast</text>
         </g>
         <g class="track-node">
-          <circle cx="740" cy="130" r="9" fill="#FFFFFF" stroke="#2F8FE0" stroke-width="3"/>
+          <circle cx="740" cy="130" r="9" fill="#FFFFFF" stroke="#7C5CFA" stroke-width="3"/>
           <text x="740" y="104" text-anchor="middle">Sydney</text>
         </g>
       </svg>
@@ -285,7 +270,7 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="section section--sky" id="faq">
+<section class="section section--tint" id="faq">
   <div class="container narrow">
     <p class="eyebrow mono center">FAQ</p>
     <h2 class="center">Good questions.</h2>
@@ -305,7 +290,7 @@
           <span class="accordion__icon">+</span>
         </button>
         <div class="accordion__panel">
-          <p>[PLACEHOLDER: it depends — an experienced overseas driver might need very few, while someone starting from zero will need a full learner's package. Fatema will give you an honest estimate after understanding where you're starting from.]</p>
+          <p>It genuinely depends on where you're starting from. An experienced overseas driver brushing up on NSW rules might only need 2–3 sessions; a first-time learner building toward the full logbook will need an ongoing package. Fatema will give you an honest, specific estimate after your first lesson — not before, since guessing without meeting you first wouldn't be fair to you.</p>
         </div>
       </div>
       <div class="accordion__item" data-reveal>
@@ -314,7 +299,7 @@
           <span class="accordion__icon">+</span>
         </button>
         <div class="accordion__panel">
-          <p>[PLACEHOLDER: confirm pick-up/drop-off policy within the Newcastle, Central Coast and Sydney service areas.]</p>
+          <p>Yes — pick-up and drop-off from home, work, or school is included within the Newcastle, Central Coast, and Sydney service areas. Just include your address when you enquire.</p>
         </div>
       </div>
       <div class="accordion__item" data-reveal>
@@ -332,7 +317,7 @@
           <span class="accordion__icon">+</span>
         </button>
         <div class="accordion__panel">
-          <p>[PLACEHOLDER: your rescheduling / cancellation policy — note lessons currently run Saturdays and Sundays only.]</p>
+          <p>Just message ahead of time on WhatsApp — at least 24 hours' notice keeps it free of charge. Since lessons only run Saturdays and Sundays, earlier notice gives you the best chance of grabbing another slot in the same week.</p>
         </div>
       </div>
     </div>
@@ -351,28 +336,41 @@
         <span>Message on WhatsApp</span>
       </a>
     </div>
-    <form class="split__media enquiry-form" data-reveal id="enquiryForm">
-      <label>Name
-        <input type="text" name="name" required>
-      </label>
-      <label>Phone or email
-        <input type="text" name="contact" required>
-      </label>
-      <label>Suburb / postcode
-        <input type="text" name="suburb">
-      </label>
-      <label>What do you need?
-        <select name="need">
-          <option>Already know how to drive — need my NSW test</option>
-          <option>Learner's licence package</option>
-          <option>Pre-test confidence tune-up</option>
-          <option>Upgrading to full licence</option>
-          <option>Not sure yet</option>
-        </select>
-      </label>
-      <button type="submit" class="btn btn--primary btn--block">Send enquiry</button>
-      <p class="form-note">This form is a placeholder — connect it to your email/CRM of choice before launch.</p>
-    </form>
+
+    <div class="split__media enquiry-wrap">
+      <form class="enquiry-form" data-reveal id="enquiryForm">
+        <label>Name
+          <input type="text" name="name" required>
+        </label>
+        <label>Phone or email
+          <input type="text" name="contact" required>
+        </label>
+        <label>Suburb / postcode
+          <input type="text" name="suburb">
+        </label>
+        <label>What do you need?
+          <select name="need">
+            <option>Already know how to drive — need my NSW test</option>
+            <option>Learner's licence package</option>
+            <option>Pre-test confidence tune-up</option>
+            <option>Upgrading to full licence</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">Send enquiry</button>
+        <p class="form-note">This form is a placeholder — connect it to your email/CRM of choice before launch.</p>
+      </form>
+
+      <!-- Celebration overlay, shown after submit -->
+      <div class="celebration" id="celebration" hidden>
+        <div class="celebration__confetti" id="confettiHost" aria-hidden="true"></div>
+        <div class="celebration__message">
+          <span class="celebration__emoji">🎉</span>
+          <h3>Hurray! Your journey begins.</h3>
+          <p>Thanks — Fatema (or the team) will be in touch shortly.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
