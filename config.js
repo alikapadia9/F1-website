@@ -17,7 +17,7 @@ const SITE_CONFIG = {
   // something more precise.
   coverageRanges: [
     { label: "Newcastle", min: 2280, max: 2323 },
-    { label: "Central Coast", min: 2250, max: 2279 },
-    { label: "Sydney", min: 2000, max: 2249 }
+    { label: "Central Coast", min: 2250, max: 2263 },
+    { label: "Sydney", min: 2000, max: 2234 }
   ]
 };
