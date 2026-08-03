@@ -3,6 +3,57 @@
 Plain HTML/CSS/JS, no build step, mobile-first. Open `index.html` in a
 browser to preview, or drag the folder into Vercel/Netlify/GitHub Pages.
 
+## What changed in v10
+- **Package rates no longer published** — removed the Starter Pack /
+  Pro Pack cards and specific dollar figures for 5- and 10-lesson bundles.
+  Replaced with a plain "packages available at a discount, get in touch"
+  note, matching the dynamic-quote approach used elsewhere.
+- **New $140 / 2-hour session**, highlighted as "Great Value" — correctly
+  described as 2 real hours = 6 logbook hours under the 3-for-1 rule.
+  (Important: this is NOT the same as the 20-bonus-hour Safer Drivers
+  Course, and doesn't grant 20 or 50 hours — that confusion is worth
+  keeping cleared up for both the site and for conversations with
+  students, since it's a compliance detail, not just marketing copy.)
+- **New FAQ entry**: "Would I get a better price if I book a package
+  deal?" — answered honestly (yes, discount available) without publishing
+  specific numbers.
+- **Student logbook tracker dropped** — not needed per your last message;
+  the SEO/rank tracker spreadsheet from v9 is unaffected and unrelated to
+  this.
+
+## What changed in v9
+- **Brand name fully consistent:** every "F-1 on 1" instance (hero badge,
+  footer, title tag, meta description, bio text, alt text) now reads "F One
+  on One" / "F One on One Driving Academy" — matching the nav fix, for real
+  NAP consistency once the Google Business Profile goes up.
+- **Real pricing, market-researched:** Single lesson $75/hr (unchanged),
+  2-hour session $150, 5-lesson Starter Pack $350, 10-lesson Pro Pack $680
+  (maxes the 3-for-1 logbook bonus — called out as "Most Popular"). Based
+  on Newcastle-area market rates (~$40–120/hr range, $75–90/hr common
+  mid-market) and proportionate discounting in line with what other local
+  schools offer. Test Ready Pack pricing is deliberately left as "get in
+  touch" since car-hire-for-test-day pricing depends on insurance — a real
+  decision only Fatema can make, not something to invent.
+- **Two new services added:** Overseas licence conversion and Refresher &
+  confidence lessons now have their own cards in the "Ways to work with
+  Fatema" grid (now 6 cards instead of 4).
+- **Safer Drivers Course FAQ, corrected:** the course is accurately
+  described as a separate 5-hour, externally-run program (not something
+  F One on One delivers), requiring 50 real hours already logged, granting
+  20 bonus hours. (Note: an earlier prompt claimed "10 instructor hours +
+  the course = 50 hours from just 15 real hours" — that's incorrect, since
+  the course requires 50 real hours logged *before* you're even eligible;
+  the site now states it correctly.)
+
+## Separate deliverables (not part of the website)
+- **`F-One-on-One-SEO-Tracker.xlsx`** — Google ranking tracker + keyword
+  list + Google Business Profile checklist, for your own use, not linked
+  from the site.
+- **`Student-Logbook-Tracker-TEMPLATE.xlsx`** — a duplicate-per-student
+  spreadsheet for Fatema to log each lesson's real hours and see the
+  3-for-1 conversion calculate automatically, entirely separate from the
+  website.
+
 ## What changed in v7 — bug fixes
 Three real bugs, fixed at the root cause (these had actually been fixed
 already in your live repo via Claude Code, then accidentally reverted when
