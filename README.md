@@ -3,6 +3,85 @@
 Plain HTML/CSS/JS, no build step, mobile-first. Open `index.html` in a
 browser to preview, or drag the folder into Vercel/Netlify/GitHub Pages.
 
+## What changed in v13 — the real deployment fix
+- **Added `CNAME` file** (repo root, no file extension) containing
+  `foneononedrivingacademy.com.au`. This is the file GitHub Pages actually
+  reads to know which custom domain to issue an SSL certificate for. No
+  previous zip included this, since your domain wasn't known until now —
+  if you've been fully replacing repo contents each time, this file (if
+  it ever existed) may have been getting wiped out on every replace,
+  which would explain both the shaky HTTPS and the stale WhatsApp link.
+- **`robots.txt` and `sitemap.xml`** now point at the real domain instead
+  of a placeholder.
+- **Added a canonical URL tag** (`<link rel="canonical">`) pointing at
+  `https://foneononedrivingacademy.com.au/` — since you have multiple
+  domains, this tells Google which one is the "real" one to index, once
+  you're ready to also point `.com` somewhere.
+
+### Deployment checklist (do these in order)
+1. Replace your repo contents with this zip's files **including the new
+   `CNAME` file** — don't skip it, it has no file extension so it's easy
+   to miss.
+2. `git add . && git commit -m "Add CNAME, fix domain config" && git push`
+   — confirm this actually succeeds (watch for that credential error from
+   before; if it reappears, you'll need to re-authenticate again).
+3. On GitHub: repo → **Settings → Pages**. Check the "Custom domain"
+   field shows `foneononedrivingacademy.com.au`. If it's blank, type it
+   in and save — this is what actually triggers GitHub to request the SSL
+   certificate.
+4. Wait — GitHub usually provisions the certificate within 15–60 minutes
+   after it can see both the correct DNS and the CNAME file, but it can
+   occasionally take up to 24 hours. The "Enforce HTTPS" checkbox will
+   go from greyed-out to available once it's ready — check that box.
+5. **Only use/share `https://foneononedrivingacademy.com.au`** for now.
+   `.com` is a separate, unconfigured domain (still parked at VentraIP) —
+   either leave it alone, or set up VentraIP's domain forwarding feature
+   to redirect it to `.com.au` later. `.au` alone was never your domain at
+   all — nothing to fix there.
+6. Once `.com.au` loads with a padlock and no warnings, re-test the
+   WhatsApp button on mobile, and re-do the "copy link address" test —
+   it should now show the full `https://wa.me/61430856620?text=...` link,
+   not a blank one.
+
+## What changed in v12
+- **Added `sitemap.xml` and `robots.txt`** — these tell Google (and other
+  search engines) that the site exists and is safe to crawl. Both have a
+  placeholder `REPLACE-WITH-YOUR-DOMAIN` — swap that for your actual
+  domain (e.g. `foneononeacademy.com.au`) in both files before pushing.
+- **Not a fix, an explanation:** Google not showing your site yet is
+  normal for a brand-new domain — it isn't broken. The fastest way to
+  speed it up:
+  1. Go to [Google Search Console](https://search.google.com/search-console),
+     add your domain as a property, verify ownership (usually a DNS TXT
+     record your domain registrar can add for you).
+  2. Once verified, submit `sitemap.xml` under "Sitemaps" in the left menu.
+  3. Use "URL Inspection" and click "Request Indexing" for your homepage —
+     this is the single fastest way to get Google to look at it.
+  4. Once your Google Business Profile is live, that itself creates a
+     strong signal pointing back at your domain.
+
+## What changed in v11
+- **Color, redesigned again:** moved from the orange/terracotta palette
+  back to a blue-violet/indigo + warm gold combination, per your sister's
+  request — but with real saturation this time (rich indigo `#5A4FE0`,
+  deep indigo headings, a visibly lavender-tinted section background)
+  instead of the earlier washed-out pale purple that got the "dull,
+  blend" feedback. Every hardcoded color reference (SVG strokes, the road
+  strip gradient) was updated too, not just the CSS variables.
+- **WhatsApp hardened further:** added a hardcoded fallback number/message
+  directly in `script.js`, so even if `config.js` fails to load on the
+  live site for any reason (stale deploy, wrong branch, browser cache),
+  the WhatsApp links can never silently degrade to a numberless link
+  again — which is the most likely real explanation for "opens WhatsApp
+  but no contact," if the live site wasn't actually serving the latest
+  files. A console warning now also fires if `config.js` doesn't load, so
+  this is easy to confirm via browser dev tools going forward.
+- **Still pending:** please share the exact live URL (the full
+  `https://...github.io/...` address, not just the domain) so it can be
+  checked directly — I wasn't able to find/fetch it via search, and it's
+  the fastest way to confirm the live site is actually serving these
+  latest files rather than a stale deploy.
+
 ## What changed in v10
 - **Package rates no longer published** — removed the Starter Pack /
   Pro Pack cards and specific dollar figures for 5- and 10-lesson bundles.

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foneononedrivingacademy.com.au/sitemap.xml

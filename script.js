@@ -16,19 +16,27 @@
   }
 
   // ---- WhatsApp links ---------------------------------------------------
-  // NOTE: no target="_blank" on purpose — on mobile, letting wa.me links
-  // navigate the current tab hands off to the native WhatsApp app far more
-  // reliably than opening a new tab first (a common cause of "it opens
-  // WhatsApp but not the right chat").
+  // FALLBACKS: if config.js fails to load for any reason on the live site
+  // (stale deploy, wrong branch, caching), these hardcoded values kick in
+  // instead of silently producing a numberless wa.me link — which is
+  // exactly what causes "WhatsApp opens but no contact/chat" bugs.
+  var FALLBACK_WHATSAPP_NUMBER = "61430856620";
+  var FALLBACK_WHATSAPP_MESSAGE = "Hi Fatema! I'd like to enquire about driving lessons with F One on One.";
+
   function buildWhatsAppUrl(prefilledText) {
-    var num = ((window.SITE_CONFIG && SITE_CONFIG.whatsappNumber) || "").replace(/\D/g, "");
-    var msg = prefilledText || (window.SITE_CONFIG && SITE_CONFIG.whatsappMessage) || "";
+    var configNum = (window.SITE_CONFIG && SITE_CONFIG.whatsappNumber) || "";
+    var num = (configNum || FALLBACK_WHATSAPP_NUMBER).replace(/\D/g, "");
+    if (!num) num = FALLBACK_WHATSAPP_NUMBER; // guard against a config value that strips to nothing
+    var msg = prefilledText || (window.SITE_CONFIG && SITE_CONFIG.whatsappMessage) || FALLBACK_WHATSAPP_MESSAGE;
     var url = "https://wa.me/" + num;
     if (msg) url += "?text=" + encodeURIComponent(msg);
     return url;
   }
 
   safe("whatsapp static links", function () {
+    if (!window.SITE_CONFIG) {
+      console.warn("[site] config.js did not load — using hardcoded WhatsApp fallback. Check that config.js is present and the <script> path is correct.");
+    }
     var waUrl = buildWhatsAppUrl();
     ["whatsappBtn", "whatsappFooter"].forEach(function (id) {
       var el = document.getElementById(id);

@@ -6,15 +6,18 @@
          + Inter (body) + JetBrains Mono (small labels).
    ============================================================ */
 :root{
-  --ink: #1E2430;
-  --terracotta: #C1502E;
-  --terracotta-deep: #93381E;
-  --gold: #C99A45;
-  --cream: #FBF6EF;
-  --tint: #F3EBDD;
+  /* NOTE: variable names kept as --terracotta/--tint/etc. for stability
+     across the stylesheet, but the actual colors below are now the
+     indigo/blue-violet + gold palette, not terracotta. */
+  --ink: #221B3D;
+  --terracotta: #5A4FE0;       /* primary: rich indigo/blue-violet */
+  --terracotta-deep: #2C2170;  /* headings, deep indigo */
+  --gold: #E0A63E;             /* accent: warm gold, contrasts the indigo */
+  --cream: #F7F5FF;            /* page background: soft violet-white, not stark/flat */
+  --tint: #E9E4FB;             /* alternating section background: visibly lavender, not washed out */
   --white: #FFFFFF;
-  --grey: #5C574C;
-  --line: rgba(30,36,48,0.14);
+  --grey: #635D78;
+  --line: rgba(34,27,61,0.14);
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
@@ -225,7 +228,7 @@ strong{ color:var(--ink); }
   height:70px;
   margin:0 18px;
   border-radius:999px;
-  background:linear-gradient(180deg, #E7D9C3, #D9C6A6);
+  background:linear-gradient(180deg, #D9D0F7, #C3B6F2);
   overflow:hidden;
 }
 @media (min-width:640px){ .road-strip{ margin:0 auto; max-width:820px; height:84px; } }
